@@ -17,7 +17,7 @@ section .text
 _start:
         ; align stack
         and rsp, 0xffffffffffffff00
-        sub rsp, 0xc0 ; size for user input (40) + MD5_ctx (152)
+        sub rsp, 0x200 ; size for user input (48) + MD5_ctx (152)
 
         ; print msg_input
         mov rdi, 1
@@ -26,23 +26,23 @@ _start:
         call sys_write
 
         ; read input
+        mov rdx, 48 ; the order is important for solving the chall !
         mov rdi, 0
         mov rsi, rsp
-        mov rdx, 40
         call sys_read
         mov r8, rax ; r8 keeps the user input size
 
         ; hash
-        lea rdi, [rsp + 40]
+        lea rdi, [rsp + 0x100]
         call MD5_Init
 
-        lea rdi, [rsp + 40]
+        lea rdi, [rsp + 0x100]
         mov rsi, rsp
         mov rdx, r8
         call MD5_Update
 
         mov rdi, hash
-        lea rsi, [rsp + 40]
+        lea rsi, [rsp + 0x100]
         call MD5_Final
 
         ; print msg_exec
