@@ -17,10 +17,11 @@ RUN gcc -c -std=c11 -Wall -O2 -o md5.o md5.c && \
     nasm -f elf64 -o hash_executor.o hash_executor.asm && \
     ld -o hash_executor md5.o hash_executor.o && \
     rm hash_executor.asm hash_executor.o md5.c md5.o && \
+    chown -R root:root /home/chall && \
     chmod 755 hash_executor && \
     chmod 644 flag && \
     apt-get purge -y --auto-remove gcc nasm
 
 EXPOSE 5555
 
-CMD socat TCP-LISTEN:5555,fork EXEC:"/home/chall/hash_executor",stderr,user=chall
+CMD socat TCP-LISTEN:5555,fork EXEC:"/home/chall/hash_executor",su=chall,stderr
