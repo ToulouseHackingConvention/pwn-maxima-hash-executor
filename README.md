@@ -7,7 +7,7 @@
 
 Yo bro',
 
-I crafted this small program.
+I made this small program.
 Tell me if you can break it.
 Use your imagination.
 
