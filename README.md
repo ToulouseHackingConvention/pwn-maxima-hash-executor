@@ -1,6 +1,6 @@
 # Hash Executor
 
-- Author: Maxime Arthaud <maxime@arthaud.me>
+- Author: Maxime Arthaud < maxime@arthaud.me >
 - Type: pwn
 
 ## Description
