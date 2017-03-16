@@ -1,6 +1,6 @@
 # Hash Executor
 
-- Auteur: Maxime Arthaud <maxime@arthaud.me>
+- Author: Maxime Arthaud <maxime@arthaud.me>
 - Type: pwn
 
 ## Description
@@ -13,51 +13,31 @@ Use your imagination.
 
 nc localhost 5555
 
-## Fichiers fournis
+## Files provided to the challengers
 
 - hash_executor
 
-## Construire l'image docker
+## Build the docker image
 
 `make build`
 
-## Lancer le container
+## Run the docker container
 
 `make run`
 
-## Obtenir les fichiers fournis
+## Get the provided files
 
 `make export`
 
-## Modifier le flag
+## Update the flag
 
-Modifier `src/flag` puis `make build`
+Update `src/flag` then `make build`
 
-## Voir les logs du container
+## Show container logs
 
 `make logs`
 
-## Nettoyer
+## Clean
 
-`make clean` supprime les containers et les fichiers fournis
-`make clean-all` supprime aussi les images
-
-## État
-
-### Relecture
-
-- Maxima
-
-### Test
-
-- Maxima
-
-### Déploiement
-
-- Maxima
-
-### Relecture Déploiement
-
-### Test Déploiement
-
-### Docker-compose
+`make clean` removes the container and the provided files
+`make clean-all` removes the container, the docker image and the provided files
