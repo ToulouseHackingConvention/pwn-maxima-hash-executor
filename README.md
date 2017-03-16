@@ -39,5 +39,5 @@ Update `src/flag` then `make build`
 
 ## Clean
 
-`make clean` removes the container and the provided files
-`make clean-all` removes the container, the docker image and the provided files
+* `make clean` removes the container and the provided files
+* `make clean-all` removes the container, the docker image and the provided files
