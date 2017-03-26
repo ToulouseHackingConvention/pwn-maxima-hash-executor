@@ -77,7 +77,7 @@ if __name__ == '__main__':
     # First step
     # ==========
     # On fait d'abord un {pop rax; pop rdx; ret}
-    # Cela permet de passer en rop et de faire rdx = 7; mprotect() pour passer bss en rwx
+    # Cela permet de passer en rop et de faire rdx = 7; mprotect() pour passer la bss en rwx
     # Ensuite, on utilise {pop rdx; ret} pour mettre 0xff dans rdx, puis on retourne dans le main
 
     '''

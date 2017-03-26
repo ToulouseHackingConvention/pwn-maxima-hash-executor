@@ -24,7 +24,7 @@ Pour faire court, ma solution fait:
   `pop rcx; pop rdx; ret` pour set `rdx = 7` et sauter sur la nouvelle rop chain
 * la rop chain fait:
   - `mprotect(0x601000, 0x1000, 7)` pour repasser la page 0x601000 en RWX
-  - `read(0, 0x601100, 255)` pour charcher un gros shellcode (voir dernière
+  - `read(0, 0x601100, 255)` pour charger un gros shellcode (voir dernière
      étape) en mémoire
   - `jmp 0x6011000` pour lancer le shellcode
 * le shellcode est généré par metasploit et fait un `execve("/bin/sh", 0, 0)`
